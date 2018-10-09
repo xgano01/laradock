@@ -41,7 +41,13 @@ volumes:
     driver: ${VOLUMES_DRIVER}
 
 services:
-
+    tika:
+      image: logicalspark/docker-tikaserver
+      ports: 
+        - 9998:9998
+      networks:
+        - frontend
+        - backend
 ### Workspace Utilities ##################################
     workspace:
       build:
